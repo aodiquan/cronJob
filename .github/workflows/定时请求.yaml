@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     # 定时请求指定链接
     - name: 'curl request-timing'
       run: curl https://request-timing.vercel.app/api
