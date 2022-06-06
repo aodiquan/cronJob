@@ -1,0 +1,14 @@
+name: 查询考勤
+on:
+  schedule:
+    - cron: '0 0/5 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # 定时请求考勤
+    - name: 'curl check-oa'
+      run: curl https://check-oa.vercel.app/api
+    # 定时请求指定链接
+    - name: 'curl request-timing'
+      run: curl https://request-timing.vercel.app/api
