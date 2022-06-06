@@ -1,0 +1,11 @@
+name: 定时请求
+on:
+  schedule:
+    - cron: '0 0/30 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # 定时请求指定链接
+    - name: 'curl request-timing'
+      run: curl https://request-timing.vercel.app/api
