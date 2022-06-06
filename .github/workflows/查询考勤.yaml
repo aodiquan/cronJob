@@ -1,12 +1,14 @@
 name: 查询考勤
+
 on:
   schedule:
     - cron: '*/5 * * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    # 定时请求考勤
-    - name: 'curl check-oa'
-      run: curl https://check-oa.vercel.app/api
+      - uses: actions/checkout@v3
+      # 定时请求考勤
+      - name: 'curl check-oa'
+        run: curl https://check-oa.vercel.app/api
